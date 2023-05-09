@@ -111,3 +111,33 @@ figure {
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
+
+input[type='checkbox'] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--almost-white);
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+input[type='checkbox']:checked {
+  border-color: var(--neon-green);
+  background-color: var(--neon-green);
+}
+
+input[type='checkbox']:checked::before {
+  // content needs to be non-empty to give background a size
+  content: '-';
+  background-image: url('./assets/images/icon-check.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  font-size: 20px;
+  position: absolute;
+  color: transparent;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
