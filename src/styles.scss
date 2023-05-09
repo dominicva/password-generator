@@ -14,7 +14,7 @@
   // typography
   --heading-lg: bold 2rem/1.35 'JetBrains Mono', monospace;
   --heading-md: bold 1.5rem/1.3 'JetBrains Mono', monospace;
-  --body: bold 1.125rem/1.3 'JetBrains Mono', monospace;
+  --body: bold 1rem/1.3 'JetBrains Mono', monospace;
 }
 
 html {
@@ -112,6 +112,16 @@ figure {
   margin-bottom: 1rem;
 }
 
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.checkbox-container:nth-child(-n + 4) {
+  margin-bottom: 1rem;
+}
+
 input[type='checkbox'] {
   appearance: none;
   width: 20px;
@@ -120,24 +130,24 @@ input[type='checkbox'] {
   outline: none;
   cursor: pointer;
   position: relative;
-}
 
-input[type='checkbox']:checked {
-  border-color: var(--neon-green);
-  background-color: var(--neon-green);
-}
+  &:checked {
+    border-color: var(--neon-green);
+    background-color: var(--neon-green);
+  }
 
-input[type='checkbox']:checked::before {
-  // content needs to be non-empty to give background a size
-  content: '-';
-  background-image: url('./assets/images/icon-check.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  font-size: 20px;
-  position: absolute;
-  color: transparent;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  &:checked::before {
+    // content needs to be non-empty to give background a size
+    content: '-';
+    background-image: url('./assets/images/icon-check.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    font-size: 20px;
+    position: absolute;
+    color: transparent;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
