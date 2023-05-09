@@ -83,16 +83,31 @@ h2 {
 form {
   display: flex;
   flex-flow: column nowrap;
+  padding: 1rem;
+  background-color: var(--dark-grey);
+
+  button {
+    height: 56px;
+  }
 }
 
 .range-container {
+  * {
+    display: block;
+  }
+
+  label {
+    margin-bottom: 0.5rem;
+  }
+
   margin-bottom: 2rem;
 }
 
-.range-container * {
-  display: block;
-}
-
-.range-container label {
-  margin-bottom: 0.5rem;
+figure {
+  background-color: var(--very-dark-grey);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
