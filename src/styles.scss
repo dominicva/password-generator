@@ -59,3 +59,40 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
+
+main {
+  padding: 4rem 1rem;
+}
+
+h1 {
+  color: var(--grey);
+  font-size: var(--body);
+  text-align: center;
+}
+
+section {
+  margin-top: 1rem;
+}
+
+h2 {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: var(--dark-grey);
+}
+
+form {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.range-container {
+  margin-bottom: 2rem;
+}
+
+.range-container * {
+  display: block;
+}
+
+.range-container label {
+  margin-bottom: 0.5rem;
+}

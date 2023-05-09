@@ -15,8 +15,39 @@
     <link rel="stylesheet" href="styles.scss" />
   </head>
   <body>
-    <div>hello world</div>
-    Password Generator P4$5W0rD! Character Length Include Uppercase Letters
-    Include Lowercase Letters Include Numbers Include Symbols Strength Generate
+    <main>
+      <h1>Password Generator</h1>
+      <section>
+        <h2>P4$5W0rD!</h2>
+        <form>
+          <div class="range-container">
+            <label for="character-length">Character Length</label>
+            <input id="character-length" type="range" />
+          </div>
+
+          <input id="include-uppercase" type="checkbox" />
+          <label for="include-uppercase">Include Uppercase Letters</label>
+
+          <input id="include-lowercase" type="checkbox" />
+          <label for="include-lowercase">Include Lowercase Letters</label>
+
+          <input id="include-numbers" type="checkbox" />
+          <label for="include-numbers">Include Numbers</label>
+
+          <input id="include-symbols" type="checkbox" />
+          <label for="include-symbols">Include Symbols</label>
+
+          <figure>
+            <div>
+              <span>Medium</span>
+              <div></div>
+            </div>
+            <figcaption>Strength</figcaption>
+          </figure>
+
+          <button>Generate</button>
+        </form>
+      </section>
+    </main>
   </body>
 </html>
