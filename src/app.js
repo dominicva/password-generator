@@ -3,6 +3,7 @@ const copyButton = document.getElementById("copy-to-clipboard");
 const successMessage = document.getElementById("copy-success-message");
 const rangeInput = document.getElementById("character-length");
 const rangeOutput = document.getElementById("character-length-value");
+const form = document.querySelector("form");
 
 copyButton.addEventListener("click", () => {
   const textToCopy = textElemToCopy.textContent;
@@ -23,4 +24,8 @@ copyButton.addEventListener("click", () => {
 
 rangeInput.addEventListener("input", e => {
   rangeOutput.textContent = e.target.value;
+});
+
+form.addEventListener("submit", e => {
+  e.preventDefault();
 });
