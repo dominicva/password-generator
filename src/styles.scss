@@ -15,6 +15,14 @@
   --heading-lg: bold 2rem/1.35 "JetBrains Mono", monospace;
   --heading-md: bold 1.5rem/1.3 "JetBrains Mono", monospace;
   --body: bold 1rem/1.3 "JetBrains Mono", monospace;
+
+  // range input values
+  --thumb-height: 1.125em;
+  --track-height: 0.19em;
+  --track-color: var(--very-dark-grey);
+  --brightness-hover: 110%;
+  --brightness-down: 100%;
+  --clip-edges: 0.125em;
 }
 
 html {
@@ -108,7 +116,10 @@ form {
     margin-bottom: 1rem;
   }
 
-  /* === range === */
+  /*
+  range styling
+  Based on https://codepen.io/ShadowShahriar/pen/zYPPYrQ
+  */
   input[type="range"] {
     font-size: 1.5rem;
     width: 100%;
@@ -116,17 +127,10 @@ form {
 
   input[type="range"] {
     color: var(--neon-green);
-    --thumb-height: 1.125em;
-    --track-height: 0.19em;
-    --track-color: var(--very-dark-grey);
-    --brightness-hover: 110%;
-    --brightness-down: 100%;
-    --clip-edges: 0.125em;
   }
 
   input[type="range"] {
     position: relative;
-    // background: #fff0;
     background-color: transparent;
     overflow: hidden;
   }
@@ -135,7 +139,7 @@ form {
     cursor: grabbing;
   }
 
-  /* === WebKit specific styles === */
+  /* WebKit specific styles */
   input[type="range"],
   input[type="range"]::-webkit-slider-runnable-track,
   input[type="range"]::-webkit-slider-thumb {
@@ -144,27 +148,15 @@ form {
     height: var(--thumb-height);
   }
 
-  // input[type="range"]::-webkit-slider-runnable-track,
-  // input[type="range"]::-webkit-slider-thumb {
-  //   position: relative;
-  // }
-
   input[type="range"]::-webkit-slider-thumb {
     --thumb-radius: calc((var(--thumb-height) * 0.5) - 1px);
     --clip-top: calc((var(--thumb-height) - var(--track-height)) * 0.5);
-    // --clip-top: calc((var(--thumb-height) - var(--track-height)) * 0.5 - 0.5px);
     --clip-bottom: calc(var(--thumb-height) - var(--clip-top));
     --clip-further: calc(100% + 1px);
     --box-fill: calc(-100vmax - var(--thumb-width, var(--thumb-height))) 0 0
       100vmax currentColor;
-
     width: var(--thumb-width, var(--thumb-height));
-    // background: linear-gradient(currentColor 0 0) scroll no-repeat left center /
-    // 50% calc(var(--track-height) + 1px);
-    // background-color: currentColor;
     background-color: var(--almost-white);
-    // position: relative;
-    // z-index: 10;
     box-shadow: var(--box-fill);
     border-radius: var(--thumb-width, var(--thumb-height));
 
@@ -200,7 +192,7 @@ form {
     cursor: not-allowed;
   }
 
-  /* === Firefox specific styles === */
+  /* Firefox specific styles */
   input[type="range"],
   input[type="range"]::-moz-range-track,
   input[type="range"]::-moz-range-thumb {
@@ -216,7 +208,6 @@ form {
   }
 
   input[type="range"]::-moz-range-thumb {
-    // background: currentColor;
     background-color: var(--almost-white);
 
     border: 0;
