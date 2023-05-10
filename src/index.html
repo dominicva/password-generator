@@ -20,7 +20,7 @@
       <h1>Password Generator</h1>
       <section>
         <div class="password-container">
-          <h2 id="text-to-copy">P4$5W0rD!P4$5W0rD!</h2>
+          <h2 id="text-to-copy">P4$5W0rD!</h2>
           <button id="copy-to-clipboard">
             <img src="./assets/images/icon-copy.svg" alt="Copy to clipboard" />
           </button>
@@ -43,22 +43,42 @@
           </div>
 
           <div class="checkbox-container">
-            <input id="include-uppercase" name="upper" type="checkbox" />
+            <input
+              id="include-uppercase"
+              name="upper"
+              type="checkbox"
+              checked
+            />
             <label for="include-uppercase">Include Uppercase Letters</label>
           </div>
 
           <div class="checkbox-container">
-            <input id="include-lowercase" name="lower" type="checkbox" />
+            <input
+              id="include-lowercase"
+              name="lower"
+              type="checkbox"
+              checked
+            />
             <label for="include-lowercase">Include Lowercase Letters</label>
           </div>
 
           <div class="checkbox-container">
-            <input id="include-numbers" name="numbers" type="checkbox" />
+            <input
+              id="include-numbers"
+              name="numbers"
+              type="checkbox"
+              checked
+            />
             <label for="include-numbers">Include Numbers</label>
           </div>
 
           <div class="checkbox-container">
-            <input id="include-symbols" name="symbols" type="checkbox" />
+            <input
+              id="include-symbols"
+              name="symbols"
+              type="checkbox"
+              checked
+            />
             <label for="include-symbols">Include Symbols</label>
           </div>
 
@@ -71,6 +91,7 @@
           </figure>
 
           <button>Generate</button>
+          <span class="error-message">Select at least one option.</span>
         </form>
       </section>
     </main>
