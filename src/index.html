@@ -20,10 +20,13 @@
       <h1>Password Generator</h1>
       <section>
         <div class="password-container">
-          <h2>P4$5W0rD!</h2>
-          <button>
-            <img src="./assets/images/icon-copy.svg" alt="Copy icon" />
+          <h2 id="text-to-copy">P4$5W0rD!P4$5W0rD!</h2>
+          <button id="copy-to-clipboard">
+            <img src="./assets/images/icon-copy.svg" alt="Copy to clipboard" />
           </button>
+          <span id="copy-success-message" aria-hidden="true"
+            >Copied to clipboard!</span
+          >
         </div>
         <form>
           <div class="range-container">
@@ -33,7 +36,7 @@
               name="character-length"
               type="range"
               min="2"
-              max="20"
+              max="18"
               value="10"
             />
             <span id="character-length-value">10</span>
