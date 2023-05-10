@@ -9,6 +9,12 @@ const form = document.querySelector("form");
 const errorMessage = form.querySelector(".error-message");
 const checkboxInputs = form.querySelectorAll('input[type="checkbox"]');
 
+for (const checkboxInput of checkboxInputs) {
+  checkboxInput.addEventListener("click", () => {
+    errorMessage.style.display = "none";
+  });
+}
+
 copyButton.addEventListener("click", () => {
   const textToCopy = passwordElem.textContent;
   navigator.clipboard
@@ -29,12 +35,6 @@ copyButton.addEventListener("click", () => {
 rangeInput.addEventListener("input", e => {
   rangeOutput.textContent = e.target.value;
 });
-
-for (checkboxInput of checkboxInputs) {
-  checkboxInput.addEventListener("click", () => {
-    errorMessage.style.display = "none";
-  });
-}
 
 form.addEventListener("submit", e => {
   e.preventDefault();
