@@ -94,6 +94,7 @@ section {
     background: none;
     border-style: none;
     cursor: pointer;
+    transform: translateX(4px);
   }
 
   #copy-success-message {
@@ -116,6 +117,7 @@ form {
     height: 56px;
     cursor: pointer;
     background-color: var(--neon-green);
+    color: var(--very-dark-grey);
     border: none;
     transition-property: background-color, color, transform, opacity;
     transition-duration: 0.3s;

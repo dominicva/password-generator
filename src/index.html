@@ -13,7 +13,7 @@
 
     <title>Frontend Mentor | Password generator app</title>
     <link rel="stylesheet" href="styles.scss" />
-    <script defer src="./app.js" />
+    <script defer type="module" src="./app.js" />
   </head>
   <body>
     <main>
@@ -33,7 +33,7 @@
             <label for="character-length">Character Length</label>
             <input
               id="character-length"
-              name="character-length"
+              name="length"
               type="range"
               min="2"
               max="18"
@@ -43,22 +43,22 @@
           </div>
 
           <div class="checkbox-container">
-            <input id="include-uppercase" type="checkbox" />
+            <input id="include-uppercase" name="upper" type="checkbox" />
             <label for="include-uppercase">Include Uppercase Letters</label>
           </div>
 
           <div class="checkbox-container">
-            <input id="include-lowercase" type="checkbox" />
+            <input id="include-lowercase" name="lower" type="checkbox" />
             <label for="include-lowercase">Include Lowercase Letters</label>
           </div>
 
           <div class="checkbox-container">
-            <input id="include-numbers" type="checkbox" />
+            <input id="include-numbers" name="numbers" type="checkbox" />
             <label for="include-numbers">Include Numbers</label>
           </div>
 
           <div class="checkbox-container">
-            <input id="include-symbols" type="checkbox" />
+            <input id="include-symbols" name="symbols" type="checkbox" />
             <label for="include-symbols">Include Symbols</label>
           </div>
 
