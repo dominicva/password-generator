@@ -114,16 +114,22 @@ form {
     width: 100%;
     height: 8px;
     margin: 18px 0;
+    transition: all ease 100ms;
   }
+
   input[type="range"]:focus {
     outline: none;
   }
+
   input[type="range"]::-webkit-slider-runnable-track {
     width: 100%;
     height: 8px;
+    cursor: grabbing;
     cursor: pointer;
     background: var(--neon-green);
+    transition: all ease 100ms;
   }
+
   input[type="range"]::-webkit-slider-thumb {
     height: 28px;
     width: 28px;
@@ -132,10 +138,21 @@ form {
     cursor: pointer;
     -webkit-appearance: none;
     margin-top: -10px;
+    transition: all ease 100ms;
   }
+
+  input[type="range"]::-webkit-slider-thumb:hover {
+    cursor: grab;
+  }
+
+  input[type="range"]::-webkit-slider-thumb:active {
+    cursor: grabbing;
+  }
+
   input[type="range"]:focus::-webkit-slider-runnable-track {
     background: var(--neon-green);
   }
+
   input[type="range"]::-moz-range-track {
     width: 100%;
     height: 8px;
@@ -143,6 +160,7 @@ form {
     background: var(--neon-green);
     border-radius: 1.3px;
   }
+
   input[type="range"]::-moz-range-thumb {
     height: 28px;
     width: 28px;
@@ -150,6 +168,19 @@ form {
     background: #ffffff;
     cursor: pointer;
   }
+
+  input[type="range"]::-moz-range-thumb:hover {
+    cursor: grab;
+  }
+
+  input[type="range"]::-moz-range-thumb:active {
+    cursor: grabbing;
+  }
+
+  input[type="range"]::-moz-range-progress {
+    background-color: var(--orange);
+  }
+
   input[type="range"]::-ms-track {
     width: 100%;
     height: 8px;
@@ -159,16 +190,19 @@ form {
     border-width: 16px 0;
     color: transparent;
   }
+
   input[type="range"]::-ms-fill-lower {
     background: var(--neon-green);
     border: 0.2px solid #010101;
     border-radius: 2.6px;
     box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
   }
+
   input[type="range"]::-ms-fill-upper {
     background: var(--neon-green);
     border-radius: 50%;
   }
+
   input[type="range"]::-ms-thumb {
     height: 28px;
     width: 28px;
@@ -176,9 +210,19 @@ form {
     background: #ffffff;
     cursor: pointer;
   }
+
+  input[type="range"]::-ms-thumb:hover {
+    cursor: grab;
+  }
+
+  input[type="range"]::-ms-thumb:active {
+    cursor: grabbing;
+  }
+
   input[type="range"]:focus::-ms-fill-lower {
     background: var(--neon-green);
   }
+
   input[type="range"]:focus::-ms-fill-upper {
     background: var(--neon-green);
   }
