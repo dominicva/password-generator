@@ -309,15 +309,6 @@ form {
   }
 }
 
-figure {
-  background-color: var(--very-dark-grey);
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-
 .checkbox-container {
   display: flex;
   align-items: center;
@@ -364,6 +355,14 @@ input[type="checkbox"] {
 
 // password strength styles
 figure {
+  background-color: var(--very-dark-grey);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+
   h3 {
     font: var(--body);
     color: var(--grey);

@@ -22,7 +22,22 @@ function generateSymbol() {
   return SPECIAL_CHARS[randomIndex];
 }
 
-export default function password({
+export function passwordStrength(score) {
+  // score calculated by zxcvbn package will be between 0 and 4
+  switch (score) {
+    case 4:
+    case 3:
+      return "strong";
+    case 2:
+      return "medium";
+    case 1:
+      return "weak";
+    case 0:
+      return "too-weak";
+  }
+}
+
+export function generatePassword({
   length = 7,
   upper = true,
   lower = true,
