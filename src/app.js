@@ -9,13 +9,15 @@ const form = document.querySelector("form");
 const errorMessage = form.querySelector(".error-message");
 const checkboxInputs = form.querySelectorAll('input[type="checkbox"]');
 
-for (const checkboxInput of checkboxInputs) {
-  checkboxInput.addEventListener("click", () => {
-    errorMessage.style.display = "none";
-  });
+function registerCheckboxListeners() {
+  for (const checkboxInput of checkboxInputs) {
+    checkboxInput.addEventListener("click", () => {
+      errorMessage.style.display = "none";
+    });
+  }
 }
 
-copyButton.addEventListener("click", () => {
+function handleCopyPassword() {
   const textToCopy = passwordElem.textContent;
   navigator.clipboard
     .writeText(textToCopy)
@@ -30,13 +32,13 @@ copyButton.addEventListener("click", () => {
       }, 1200);
     })
     .catch(e => console.error(e));
-});
+}
 
-rangeInput.addEventListener("input", e => {
+function setRangeOutput(e) {
   rangeOutput.textContent = e.target.value;
-});
+}
 
-form.addEventListener("submit", e => {
+function handleSubmit(e) {
   e.preventDefault();
   errorMessage.style.display = "none";
 
@@ -51,6 +53,7 @@ form.addEventListener("submit", e => {
     errorMessage.style.display = "block";
     return;
   }
+
   const passwordOptions = {};
 
   for (const input of inputs) {
@@ -63,4 +66,16 @@ form.addEventListener("submit", e => {
 
   const password = generatePassword(passwordOptions);
   passwordElem.textContent = password;
-});
+}
+
+export default function App() {
+  registerCheckboxListeners();
+
+  copyButton.addEventListener("click", handleCopyPassword);
+
+  rangeInput.addEventListener("input", e => {
+    rangeOutput.textContent = e.target.value;
+  });
+
+  form.addEventListener("submit", handleSubmit);
+}
