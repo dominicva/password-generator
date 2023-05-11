@@ -1,6 +1,6 @@
 import generatePassword from "./password";
 
-const passwordElem = document.getElementById("text-to-copy");
+const passwordElem = document.getElementById("password");
 const copyButton = document.getElementById("copy-to-clipboard");
 const successMessage = document.getElementById("copy-success-message");
 const rangeInput = document.getElementById("character-length");

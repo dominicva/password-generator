@@ -20,7 +20,7 @@
       <h1>Password Generator</h1>
       <section>
         <div class="password-container">
-          <h2 id="text-to-copy">P4$5W0rD!</h2>
+          <h2 id="password">P4$5W0rD!</h2>
           <button id="copy-to-clipboard">
             <img src="./assets/images/icon-copy.svg" alt="Copy to clipboard" />
           </button>
@@ -83,11 +83,18 @@
           </div>
 
           <figure>
-            <div>
-              <span>Medium</span>
-              <div></div>
+            <div class="strength-label">
+              <h3>Strength</h3>
             </div>
-            <figcaption>Strength</figcaption>
+            <div class="strength-container">
+              <figcaption>Medium</figcaption>
+              <div class="strength-bars">
+                <b class="filled too-weak"></b>
+                <b class="filled weak"></b>
+                <b class="filled medium"></b>
+                <b class="filled strong"></b>
+              </div>
+            </div>
           </figure>
 
           <button>Generate</button>

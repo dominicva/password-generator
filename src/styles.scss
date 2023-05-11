@@ -361,3 +361,54 @@ input[type="checkbox"] {
     transform: translate(-50%, -50%);
   }
 }
+
+// password strength styles
+figure {
+  h3 {
+    font: var(--body);
+    color: var(--grey);
+    text-transform: uppercase;
+  }
+
+  .strength-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  figcaption {
+    text-transform: uppercase;
+  }
+
+  .strength-bars {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  b {
+    width: 0.625rem;
+    height: 1.75rem;
+    border: 2px solid var(--almost-white);
+    display: block;
+
+    &.filled {
+      border: none;
+    }
+
+    &.strong {
+      background-color: var(--neon-green);
+    }
+
+    &.medium {
+      background-color: var(--yellow);
+    }
+
+    &.weak {
+      background-color: var(--orange);
+    }
+
+    &.too-weak {
+      background-color: var(--red);
+    }
+  }
+}
