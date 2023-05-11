@@ -1,24 +1,24 @@
 import generatePassword from "./password";
 
-const passwordElem = document.getElementById("password");
+const password = document.getElementById("password");
 const copyButton = document.getElementById("copy-to-clipboard");
 const successMessage = document.getElementById("copy-success-message");
 const rangeInput = document.getElementById("character-length");
 const rangeOutput = document.getElementById("character-length-value");
 const form = document.querySelector("form");
 const errorMessage = form.querySelector(".error-message");
-const checkboxInputs = form.querySelectorAll('input[type="checkbox"]');
+const checkboxes = form.querySelectorAll('input[type="checkbox"]');
 
 function registerCheckboxListeners() {
-  for (const checkboxInput of checkboxInputs) {
-    checkboxInput.addEventListener("click", () => {
+  for (const checkbox of checkboxes) {
+    checkbox.addEventListener("click", () => {
       errorMessage.style.display = "none";
     });
   }
 }
 
 function handleCopyPassword() {
-  const textToCopy = passwordElem.textContent;
+  const textToCopy = password.textContent;
   navigator.clipboard
     .writeText(textToCopy)
     .then(() => {
@@ -64,8 +64,8 @@ function handleSubmit(e) {
     }
   }
 
-  const password = generatePassword(passwordOptions);
-  passwordElem.textContent = password;
+  const newPassword = generatePassword(passwordOptions);
+  password.textContent = newPassword;
 }
 
 export default function App() {
@@ -73,9 +73,7 @@ export default function App() {
 
   copyButton.addEventListener("click", handleCopyPassword);
 
-  rangeInput.addEventListener("input", e => {
-    rangeOutput.textContent = e.target.value;
-  });
+  rangeInput.addEventListener("input", setRangeOutput);
 
   form.addEventListener("submit", handleSubmit);
 }
