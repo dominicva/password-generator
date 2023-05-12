@@ -247,7 +247,8 @@ form {
   }
 
   input[type="range"]:hover::-webkit-slider-thumb {
-    filter: brightness(var(--brightness-hover));
+    background-color: transparent;
+    border: 2px solid var(--neon-green);
     cursor: grab;
   }
 
