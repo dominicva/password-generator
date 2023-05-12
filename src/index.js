@@ -1,3 +1,3 @@
-import App from "./app";
+import app from "./app";
 
-window.addEventListener("DOMContentLoaded", App);
+window.addEventListener("DOMContentLoaded", app);

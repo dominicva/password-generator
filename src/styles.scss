@@ -114,6 +114,10 @@ form {
   background-color: var(--dark-grey);
 
   button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
     height: 56px;
     cursor: pointer;
     background-color: var(--neon-green);
@@ -135,8 +139,13 @@ form {
     opacity: 0.7;
   }
 
-  button:disabled {
-    color: blue;
+  .right-arrow path {
+    fill: var(--dark-grey);
+    transition: fill 0.3s linear; /* Add a smooth transition effect */
+  }
+
+  .right-arrow path:hover {
+    fill: #fff;
   }
 
   .error-message {

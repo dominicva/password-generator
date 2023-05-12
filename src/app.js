@@ -46,18 +46,46 @@ function setRangeOutput(e) {
   rangeOutput.textContent = e.target.value;
 }
 
-function handleSubmit(e) {
-  e.preventDefault();
-  errorMessage.style.display = "none";
-
+function setStrengthBars(score, category) {
   // reset strength bars
   for (let i = 0; i < 4; i++) {
     strengthBars[i].className = "";
   }
 
+  for (let i = 0; i < score; i++) {
+    strengthBars[i].className = `filled ${category}`;
+  }
+
+  if (category == "too-weak") {
+    strengthElem.textContent = "too weak!";
+  } else {
+    strengthElem.textContent = category;
+  }
+}
+
+function buildPasswordOptions(inputs) {
+  const passwordOptions = {};
+
+  for (const input of inputs) {
+    if (input.type == "range") {
+      passwordOptions.length = Number(input.value);
+    } else {
+      passwordOptions[input.name] = input.checked;
+    }
+  }
+
+  return passwordOptions;
+}
+
+function handleSubmit(e) {
+  e.preventDefault();
+
   // ignores button which is the last form element
   const inputs = Array.from(e.target.elements).slice(0, -1);
 
+  // clear error state
+  errorMessage.style.display = "none";
+  // now handle error state where no checkboxes are selected
   const hasCheckedInput = inputs.slice(1).reduce((output, currInput) => {
     if (currInput.checked) return true;
     else return output;
@@ -69,39 +97,18 @@ function handleSubmit(e) {
     return;
   }
 
-  const passwordOptions = {};
-
-  for (const input of inputs) {
-    if (input.type == "range") {
-      passwordOptions.length = Number(input.value);
-    } else {
-      passwordOptions[input.name] = input.checked;
-    }
-  }
-
+  const passwordOptions = buildPasswordOptions(inputs);
   const newPassword = generatePassword(passwordOptions);
   const strengthScore = zxcvbn(newPassword).score;
-  const strength = passwordStrength(strengthScore);
-
-  for (let i = 0; i < strengthScore; i++) {
-    strengthBars[i].className = `filled ${strength}`;
-  }
-
-  if (strength == "too-weak") {
-    strengthElem.textContent = "too weak!";
-  } else {
-    strengthElem.textContent = strength;
-  }
+  const strengthCategory = passwordStrength(strengthScore);
+  setStrengthBars(strengthScore, strengthCategory);
 
   password.textContent = newPassword;
 }
 
-export default function App() {
+export default function app() {
   registerCheckboxListeners();
-
   copyButton.addEventListener("click", handleCopyPassword);
-
   rangeInput.addEventListener("input", setRangeOutput);
-
   form.addEventListener("submit", handleSubmit);
 }
