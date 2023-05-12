@@ -85,6 +85,7 @@ section {
 .password-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: var(--dark-grey);
   padding: 1rem;
   margin-bottom: 1rem;
@@ -99,6 +100,10 @@ section {
     border-style: none;
     cursor: pointer;
     transform: translateX(4px);
+  }
+
+  .copy-icon:hover path {
+    fill: var(--almost-white);
   }
 
   #copy-success-message {

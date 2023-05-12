@@ -16,6 +16,20 @@ const checkboxes = form.querySelectorAll('input[type="checkbox"]');
 const strengthBars = document.querySelectorAll("b");
 const strengthElem = document.querySelector("figcaption");
 
+function setPasswordSize() {
+  const passwordLength = password.textContent.length;
+  // console.log(`Length: ${pLength}`);
+  if (passwordLength > 15) {
+    password.style.fontSize = "1.25rem";
+  } else if (passwordLength > 17) {
+    password.style.fontSize = "1.2rem";
+  } else if (passwordLength > 18) {
+    password.style.fontSize = "1.1rem";
+  } else {
+    password.style.fontSize = "1.5rem";
+  }
+}
+
 function registerCheckboxListeners() {
   // removes error message as soon as a checkbox is checked
   for (const checkbox of checkboxes) {
@@ -113,6 +127,7 @@ function handleSubmit(e) {
 
   password.style.color = "var(--almost-white)";
   password.textContent = newPassword;
+  setPasswordSize();
 }
 
 export default function app() {
