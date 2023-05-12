@@ -52,7 +52,6 @@ function handleSubmit(e) {
 
   // reset strength bars
   for (let i = 0; i < 4; i++) {
-    console.dir(strengthBars[i]);
     strengthBars[i].className = "";
   }
 
@@ -84,7 +83,7 @@ function handleSubmit(e) {
   const strengthScore = zxcvbn(newPassword).score;
   const strength = passwordStrength(strengthScore);
 
-  for (let i = 0; i <= strengthScore; i++) {
+  for (let i = 0; i < strengthScore; i++) {
     strengthBars[i].className = `filled ${strength}`;
   }
 

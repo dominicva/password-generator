@@ -26,12 +26,12 @@ export function passwordStrength(score) {
   // score calculated by zxcvbn package will be between 0 and 4
   switch (score) {
     case 4:
-    case 3:
       return "strong";
-    case 2:
+    case 3:
       return "medium";
-    case 1:
+    case 2:
       return "weak";
+    case 1:
     case 0:
       return "too-weak";
   }
