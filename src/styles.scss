@@ -70,6 +70,14 @@ h6 {
 
 main {
   padding: 4rem 1rem;
+  max-width: 540px;
+  margin: auto;
+}
+
+@media (min-width: 540) {
+  main {
+    padding-top: 8rem;
+  }
 }
 
 h1 {
@@ -430,6 +438,36 @@ figure {
 
     &.too-weak {
       background-color: var(--red);
+    }
+  }
+}
+
+@media (min-width: 540px) {
+  main {
+    padding-top: 8rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .checkbox-container {
+    label {
+      font-size: 1.125rem;
+    }
+  }
+
+  .checkbox-container:nth-child(-n + 4) {
+    margin-bottom: 1.25rem;
+  }
+
+  figure {
+    .strength-container {
+      gap: 1.5rem;
+    }
+    figcaption {
+      font-size: 1.4rem;
     }
   }
 }
