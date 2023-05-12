@@ -1,12 +1,9 @@
-import {
-  generatePassword,
-  passwordStrength,
-  passwordStrengthScore,
-} from "./password";
+import { generatePassword, passwordStrength } from "./password";
 import zxcvbn from "zxcvbn";
 
 const password = document.getElementById("password");
 const copyButton = document.getElementById("copy-to-clipboard");
+const copyIcon = document.querySelector(".copy-icon path");
 const successMessage = document.getElementById("copy-success-message");
 const rangeInput = document.getElementById("character-length");
 const rangeOutput = document.getElementById("character-length-value");
@@ -18,7 +15,6 @@ const strengthElem = document.querySelector("figcaption");
 
 function setPasswordSize() {
   const passwordLength = password.textContent.length;
-  // console.log(`Length: ${pLength}`);
   if (passwordLength > 15) {
     password.style.fontSize = "1.25rem";
   } else if (passwordLength > 17) {
@@ -47,11 +43,13 @@ function handleCopyPassword() {
       successMessage.style.transition =
         "opacity 0.2s cubic-bezier(0.5, 0, 0.5, 1)";
       successMessage.style.opacity = 1;
+      copyIcon.style.fill = "var(--neon-green)";
 
       setTimeout(() => {
         successMessage.style.transition = "none";
         successMessage.style.opacity = 0;
-      }, 1200);
+        copyIcon.style.fill = "";
+      }, 1700);
     })
     .catch(e => console.error(e));
 }
