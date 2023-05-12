@@ -32,6 +32,7 @@ export function passwordStrength(score) {
     case 2:
       return "weak";
     case 1:
+      return "too-weak";
     case 0:
       return "too-weak";
   }

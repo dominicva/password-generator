@@ -46,14 +46,22 @@ function setRangeOutput(e) {
   rangeOutput.textContent = e.target.value;
 }
 
+function setStrengthBar(bar, category) {
+  bar.className = `filled ${category}`;
+}
+
 function setStrengthBars(score, category) {
   // reset strength bars
   for (let i = 0; i < 4; i++) {
     strengthBars[i].className = "";
   }
 
-  for (let i = 0; i < score; i++) {
-    strengthBars[i].className = `filled ${category}`;
+  if (score > 1) {
+    for (let i = 0; i < score; i++) {
+      setStrengthBar(strengthBars[i], category);
+    }
+  } else {
+    setStrengthBar(strengthBars[0], category);
   }
 
   if (category == "too-weak") {
@@ -103,6 +111,7 @@ function handleSubmit(e) {
   const strengthCategory = passwordStrength(strengthScore);
   setStrengthBars(strengthScore, strengthCategory);
 
+  password.style.color = "var(--almost-white)";
   password.textContent = newPassword;
 }
 

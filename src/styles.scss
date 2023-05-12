@@ -90,6 +90,10 @@ section {
   margin-bottom: 1rem;
   position: relative;
 
+  h2 {
+    color: var(--grey);
+  }
+
   button {
     background: none;
     border-style: none;
